@@ -23,6 +23,7 @@ h1 em { font-weight: 400; color: #a3636b; }
 .letter h2 { font-family: 'La Belle Aurore', 'Cormorant Garamond', cursive; color: #966069; font-size: 33px; font-weight: 400; margin: 31px 0 17px; }
 .letter-body { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; line-height: 1.75; font-weight: 500; }
 .letter-body p { margin: 0 0 20px; }
+.letter-body strong { font-weight: 700; }
 .signature { margin-top: 28px; }
 .signature > span { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 17px; color: #88706a; }
 .signature p { font-family: 'La Belle Aurore', cursive; font-size: 36px; color: #966069; margin: 6px 0 13px; }

@@ -14,36 +14,24 @@ function Sprig({ className = '' }: { className?: string }) {
 function App() {
   return (
     <main className="page">
-      <header className="page-header">
-        <a className="wordmark" href="#letter" aria-label="A little love, go to the letter"><span aria-hidden="true">♡</span> a little love</a>
-        <span className="header-note">JUST FOR YOU</span>
-      </header>
-
       <section className="letter-section" aria-labelledby="page-title">
-        <div className="intro">
-          <div className="eyebrow"><span /> WORDS FROM THE HEART <span /></div>
-          <h1 id="page-title">Some things are better<br />said in a <em>letter.</em></h1>
-          <p>A little piece of my heart, put into words.</p>
-        </div>
-
         <div className="letter-wrap">
           <Sprig className="sprig sprig-left" />
           <Sprig className="sprig sprig-right" />
-          <article className="letter" id="letter" aria-label="A letter to my love">
-            <div className="letter-top"><span>A LETTER FOR YOU</span><span className="tiny-heart" aria-hidden="true">♡</span><span>WITH ALL MY HEART</span></div>
-            <h2>My dearest,</h2>
+          <article className="letter" id="letter" lang="vi" aria-label="Thư gửi em">
+            <h2 id="page-title">Thư gửi em,</h2>
             <div className="letter-body">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Praesent tristique magna sit amet purus gravida quis blandit turpis. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Enim neque volutpat ac tincidunt vitae semper quis lectus nulla. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque.</p>
-              <p>Aliquam erat volutpat. Nulla facilisi morbi tempus iaculis urna id volutpat lacus laoreet. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Eget duis at tellus at urna condimentum mattis pellentesque id.</p>
+              <p>Không vòng vo, cũng không sến súa gì đâu. Anh chỉ muốn nói một điều đơn giản thôi: <strong>Anh thương em.</strong></p>
+              <p>Anh cũng chẳng biết từ lúc nào em đã trở thành một phần trong những suy nghĩ của anh. Mình chỉ mới bắt đầu thôi, mà đã có khá nhiều thứ khiến anh phải suy nghĩ về mối quan hệ này. Nhưng nghĩ tới nghĩ lui, anh vẫn cứ mặt dày mà bước tiếp. Chắc vì lý do để anh ở bên em luôn lớn hơn tất cả những lý do khiến anh nghĩ mình nên bỏ cuộc.</p>
+              <p>Em cũng đừng nói mình tầm thường nữa. Trong mắt anh, em giỏi hơn em nghĩ nhiều. Em tự lập, không thích dựa dẫm vào ai, lại còn hiểu chuyện đến mức đôi khi làm anh bất ngờ. Nhưng mà ở bên anh thì em không cần lúc nào cũng phải mạnh mẽ như vậy đâu. Có người yêu rồi thì tập cách dựa vào người yêu một chút đi chứ.</p>
+              <p>Anh chỉ muốn em biết rằng anh đang cố gắng, theo cách của anh, để làm em vui và để em cảm thấy hạnh phúc khi ở bên anh.</p>
+              <p>Và sau này, nếu có lúc anh lỡ làm điều gì ngu ngốc hay khiến em buồn, thì anh mong em vẫn nhớ tới những khoảnh khắc như thế này. Không phải để em phải bỏ qua mọi lỗi lầm của anh, mà là để em nhớ rằng anh thật sự trân trọng em và mối quan hệ này.</p>
             </div>
-            <div className="signature"><span>Always & forever,</span><p>Yours <span aria-hidden="true">♡</span></p></div>
+            <div className="signature"><p>Anh thương em.</p></div>
             <div className="letter-bottom" aria-hidden="true"><span /><span>♡</span><span /></div>
           </article>
           <div className="seal" aria-hidden="true">♡</div>
         </div>
-        <footer><span className="footer-heart" aria-hidden="true">♡</span><p>A small letter. A whole lot of love.</p><span className="footer-note">SOME WORDS ARE MEANT TO BE KEPT.</span></footer>
       </section>
     </main>
   )
