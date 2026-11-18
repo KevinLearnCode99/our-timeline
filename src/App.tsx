@@ -1,4 +1,43 @@
-﻿import './App.css'
+import { useEffect, useState } from 'react'
+import './App.css'
+import babePhoto from './babe.jpg'
+
+function getDaysUntilValentine() {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Edmonton',
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  }).formatToParts(new Date())
+  const part = (type: string) => Number(parts.find((value) => value.type === type)!.value)
+  const today = Date.UTC(part('year'), part('month') - 1, part('day'))
+  return Math.max(0, Math.round((Date.UTC(2029, 1, 14) - today) / 86_400_000))
+}
+
+function ValentineCountdown() {
+  const [days, setDays] = useState(getDaysUntilValentine)
+
+  useEffect(() => {
+    const update = () => setDays(getDaysUntilValentine())
+    const interval = window.setInterval(update, 1000)
+    window.addEventListener('focus', update)
+    return () => {
+      window.clearInterval(interval)
+      window.removeEventListener('focus', update)
+    }
+  }, [])
+
+  return (
+    <div className="countdown-bar" lang="en" role="status">
+      <span className="countdown-heart" aria-hidden="true">♡</span>
+      <div className="countdown-copy">
+        <span className="countdown-label">Until Valentine's Day</span>
+        <time dateTime="2029-02-14">14 February 2029</time>
+      </div>
+      <div className="countdown-days"><strong>{days.toLocaleString('en-US')}</strong><span>{days === 1 ? 'day to go' : 'days to go'}</span></div>
+    </div>
+  )
+}
 
 function Sprig({ className = '' }: { className?: string }) {
   return (
@@ -19,7 +58,17 @@ function App() {
           <Sprig className="sprig sprig-left" />
           <Sprig className="sprig sprig-right" />
           <article className="letter" id="letter" lang="vi" aria-label="Thư gửi em">
-            <h2 id="page-title">Thư gửi em,</h2>
+            <ValentineCountdown />
+            <header className="letter-heading">
+              <div className="letter-heading-copy">
+                <h2 id="page-title">Thư gửi<br />em bé Phượng,</h2>
+                <span className="heading-rule" aria-hidden="true" />
+              </div>
+              <figure className="photo-keepsake">
+                <img src={babePhoto} alt="Em bé Phượng giữa vườn hoa hướng dương" width="720" height="960" fetchPriority="high" />
+                <figcaption>Em bé của anh ♡</figcaption>
+              </figure>
+            </header>
             <div className="letter-body">
               <p>Không vòng vo, cũng không sến súa gì đâu. Anh chỉ muốn nói một điều đơn giản thôi: <strong>Anh thương em.</strong></p>
               <p>Anh cũng chẳng biết từ lúc nào em đã trở thành một phần trong những suy nghĩ của anh. Mình chỉ mới bắt đầu thôi, mà đã có khá nhiều thứ khiến anh phải suy nghĩ về mối quan hệ này. Nhưng nghĩ tới nghĩ lui, anh vẫn cứ mặt dày mà bước tiếp. Chắc vì lý do để anh ở bên em luôn lớn hơn tất cả những lý do khiến anh nghĩ mình nên bỏ cuộc.</p>

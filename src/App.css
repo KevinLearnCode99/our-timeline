@@ -1,26 +1,44 @@
 ﻿.page {
   min-height: 100svh;
   background: radial-gradient(ellipse at 12% 40%, #ecd9d14d, transparent 45%), radial-gradient(ellipse at 90% 60%, #e9d1cd55, transparent 42%), #f7f0ec;
-  padding: 0 48px;
+  padding: 0 48px 72px;
 }
 .page-header { max-width: 1320px; margin: auto; height: 98px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #b88c801f; }
 .wordmark { text-decoration: none; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 25px; font-style: italic; color: #75494b; }
 .wordmark span { font-style: normal; font-size: 28px; margin-right: 8px; vertical-align: -2px; }
 .wordmark:focus-visible { outline: 2px solid #a5646c; outline-offset: 6px; }
 .header-note { font-size: 9px; letter-spacing: 2.8px; color: #8b7770; }
-.letter-section { padding-top: 58px; }
+.letter-section { padding-top: 48px; }
 .intro { text-align: center; }
 .eyebrow { font-size: 9px; letter-spacing: 2.7px; color: #9a666a; display: flex; gap: 16px; justify-content: center; align-items: center; }
 .eyebrow span { width: 28px; height: 1px; background: #c7a4a2; }
 h1 { margin: 23px 0 17px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(42px, 5vw, 64px); line-height: 1.07; font-weight: 400; letter-spacing: -1.9px; color: #563c3e; }
 h1 em { font-weight: 400; color: #a3636b; }
 .intro > p { margin: 0; font-size: 12px; color: #8e7b74; letter-spacing: .25px; }
-.letter-wrap { position: relative; max-width: 690px; margin: 49px auto 0; }
+.letter-wrap { position: relative; max-width: 730px; margin: 0 auto; }
 .letter-wrap::before { content: ''; position: absolute; inset: 9px -5px -9px 5px; background: #fcf9f3; border: 1px solid #e8ded5; transform: rotate(-1.3deg); box-shadow: 0 10px 28px #78524609; }
-.letter { position: relative; background: #fffcf7; padding: 32px 62px 28px; border: 1px solid #e9ded5; box-shadow: 0 8px 35px #64473708; scroll-margin-top: 24px; }
+.letter { position: relative; background: #fffcf7; padding: 30px 54px 32px; border: 1px solid #e9ded5; box-shadow: 0 8px 35px #64473708; scroll-margin-top: 24px; }
 .letter-top { display: flex; justify-content: space-between; align-items: center; font-size: 7px; letter-spacing: 1.8px; color: #9a8880; border-bottom: 1px solid #e9ded5; padding-bottom: 21px; }
+.countdown-bar { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border: 1px solid #e7d1ce; border-radius: 8px; background: #f7ebe7; color: #966069; }
+.countdown-heart { font-size: 30px; }
+.countdown-copy { display: grid; gap: 6px; }
+.countdown-label { font-size: 12px; font-weight: 500; }
+.countdown-copy time { font-size: 10px; color: #8e7b74; }
+.countdown-days { display: grid; gap: 2px; margin-left: auto; padding-left: 16px; border-left: 1px solid #e1c6c2; text-align: center; flex-shrink: 0; }
+.countdown-days strong { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 34px; font-weight: 500; line-height: 1; }
+.countdown-days > span { font-size: 9px; }
 .tiny-heart { font-size: 20px; color: #ad777b; }
 .letter h2 { font-family: 'La Belle Aurore', 'Cormorant Garamond', cursive; color: #966069; font-size: 33px; font-weight: 400; margin: 31px 0 17px; }
+.letter-heading { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 36px 0 30px; margin-bottom: 26px; border-bottom: 1px solid #e9ded5; }
+.letter-heading-copy { min-width: 0; }
+.letter-kicker { margin: 0 0 18px; font-size: 10px; letter-spacing: 1.5px; color: #9a8880; }
+.letter-kicker span { margin-left: 5px; color: #a3636b; }
+.letter-heading h2 { margin: 0; font-size: 39px; line-height: 1.45; }
+.heading-rule { display: block; width: 48px; height: 1px; margin-top: 18px; background: #c7a4a2; }
+.photo-keepsake { position: relative; flex: 0 0 158px; margin: 4px 5px 4px 0; padding: 8px 8px 0; background: #fffefa; border: 1px solid #e8ded5; box-shadow: 0 5px 16px #64473714; transform: rotate(4deg); }
+.photo-keepsake::before { content: ''; position: absolute; z-index: 1; width: 62px; height: 20px; top: -10px; left: calc(50% - 31px); background: #dfc9a9a6; transform: rotate(-8deg); }
+.photo-keepsake img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+.photo-keepsake figcaption { padding: 9px 0 8px; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 15px; font-style: italic; color: #966069; }
 .letter-body { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; line-height: 1.75; font-weight: 500; }
 .letter-body p { margin: 0 0 20px; }
 .letter-body strong { font-weight: 700; }
@@ -40,19 +58,29 @@ footer p { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; f
 .footer-note { color: #958079; font-size: 7px; letter-spacing: 2.1px; }
 @media (max-width: 900px) { .sprig { width: 115px; } .sprig-left { left: -45px; } .sprig-right { right: -42px; } }
 @media (max-width: 600px) {
-  .page { padding: 0 22px; overflow: hidden; }
+  .page { padding: 0 20px 58px; overflow: hidden; }
   .page-header { height: 77px; }
   .wordmark { font-size: 23px; }
   .header-note { font-size: 8px; letter-spacing: 2px; }
-  .letter-section { padding-top: 42px; }
+  .letter-section { padding-top: 28px; }
   .eyebrow { font-size: 8px; letter-spacing: 2px; gap: 11px; }
   .eyebrow span { width: 20px; }
   h1 { font-size: clamp(39px, 9.8vw, 56px); letter-spacing: -1.1px; margin-top: 21px; }
   .intro > p { font-size: 11px; }
-  .letter-wrap { margin-top: 36px; }
-  .letter { padding: 24px 25px 26px; }
+  .letter-wrap { margin-top: 0; }
+  .letter { padding: 20px 22px 26px; }
+  .countdown-bar { gap: 10px; padding: 14px 12px; flex-wrap: wrap; }
+  .countdown-heart { display: none; }
+  .countdown-label { font-size: 11px; }
+  .countdown-days { padding-left: 12px; }
   .letter-top { font-size: 6px; letter-spacing: 1px; padding-bottom: 15px; }
   .letter h2 { margin-top: 25px; font-size: 31px; }
+  .letter-heading { gap: 12px; padding: 28px 0 24px; margin-bottom: 22px; }
+  .letter-heading h2 { margin: 0; font-size: clamp(24px, 6vw, 31px); }
+  .letter-kicker { font-size: 8px; letter-spacing: .6px; margin-bottom: 12px; }
+  .photo-keepsake { flex-basis: 112px; padding: 6px 6px 0; margin-right: 0; }
+  .photo-keepsake figcaption { font-size: 12px; padding: 7px 0; }
+  .heading-rule { margin-top: 12px; width: 32px; }
   .letter-body { font-size: 18px; line-height: 1.7; }
   .letter-body p { margin-bottom: 21px; }
   .sprig { opacity: .4; }
